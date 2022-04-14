@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+
+    <!-- So uh, you can simplify the navbar even further, though it will have a bit of a different look to it, as shown below -->
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="navbar-nav">
+        <a class="navbar-brand" href="{% url 'index' %}">DJANGO</a>
+        <a class="nav-item nav-link" href="{% url 'admin:index' %}">Admin</a>
+        <a class="nav-item nav-link" href="{% url 'basic_app:other' %}">Other</a>
+      </div>
+    </nav> -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <ul class ="navbar-nav">
+          <li><a class="navbar-brand" href="{% url 'index' %}">BRAND</a></li>
+          <li><a class="nav-item nav-link" href="{% url 'admin:index' %}">Admin</a></li>
+          <li><a class="nav-item nav-link" href="{% url 'basic_app:other' %}">Other</a></li>
+        </ul>
+
+      </div>
+
+    </nav>
+
+    <div class="container">
+      {% block body_block%}
+      <!-- Anything outside of this will be inherited if you extend! -->
+      {% endblock %}
+    </div>
+  </body>
+</html>
